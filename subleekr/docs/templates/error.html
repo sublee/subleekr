@@ -1,0 +1,10 @@
+{% extends "docs/index.html" %}
+{% block title %}Error - {% endblock %}
+{% block body %}
+  <p style="
+    font-size: 3em;
+    font-family: serif;
+    font-weight: bolder;
+    margin: 2em;
+    padding: 0;">{{ error|e }}</p>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Status</title>
+<link rel="shortcut icon"
+  href="{{ url_for("static", filename="favicon.ico")|e }}" />
+<script src="http://www.google.com/jsapi"></script>
+<script>
+  google.load( "visualization", "1", {
+    packages: [ "annotatedtimeline" ]
+  });
+  google.setOnLoadCallback(function() {
+    var data, chart, elem, rows = [], options = {
+      displayAnnotations: true,
+      //displayRangeSelector: false,
+      colors: [ "#f45", "#6c0" ],
+      dateFormat: "yyyy-MM-dd HH:mm:ss",
+      scaleType: "allmaximized"
+    };
+    {% for status in log|reverse %}
+      rows.push([
+        new Date({{
+          status.logged_at.strftime("%Y, %m - 1, %d, %H, %M, %S")
+        }}),
+        {{ status.temperature * 0.05 }},
+        {{ status.brightness }}
+      ]);
+      {% if loop.last %}
+        options.zoomStartTime = new Date({{
+          status.logged_at.strftime("%Y, %m - 1, %d - 1, %H, %M, %S")
+        }});
+      {% endif %}
+    {% endfor %}
+
+    data = new google.visualization.DataTable();
+    data.addColumn( "date", "Logged at" );
+    data.addColumn( "number", "온도" );
+    data.addColumn( "number", "밝기" );
+    data.addRows( rows );
+
+    elem = document.getElementById( "chart" );
+    chart = new google.visualization.AnnotatedTimeLine( elem );
+
+    chart.draw( data, options );
+  });
+</script>
+</head>
+<body>
+<div id="chart" style="width: 800px; height: 300px;"></div>
+<form method="post">
+  <input name="temperature" />
+  <input name="brightness" />
+  <button type="submit">submit</button>
+</form>
+</body>
+</html>

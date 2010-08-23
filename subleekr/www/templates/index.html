@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>sublee</title>
+{% include "openid.html" %}
+<link href="{{ url_for("static", filename="style.less")|e }}" rel="stylesheet/less" />
+<script src="http://lab.sublee.kr/forks/less.js/dist/less-1.0.34.js"></script>
+<script src="http://js.sublee.kr/jquery.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+<script>
+  DURATION = {{ duration }};
+</script>
+</head>
+<body>
+
+<h1><img alt="sublee"
+  src="{{ url_for("static", filename="mask.png")|e }}" /></h1>
+<script src="{{ url_for("static", filename="flame.js")|e }}"></script>
+
+{% set nofavicon = url_for("static", filename="nofavicon.gif") %}
+{% for category, sites in categorized_sites %}
+  <section id="{{ category|e }}" class="sites">
+    <h2>{{ category|e }}</h2>
+    <ul>
+      {% for site in sites %}
+        <li>
+          {%- if site.icon -%}
+            <img src="{{ site.icon|e }}"
+              onerror="this.src = '{{ nofavicon|e }}';" />
+          {%- else -%}
+            <img src="{{ nofavicon|e }}" />
+          {%- endif -%}
+          <a href="{{ site.url|e}}">{{ site.name|e }}
+            {% if site.description %}
+              <span class="description"><span class="is">&mdash;</span>
+                {{ site.description|e }}</span>
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <script>
+    $( "#{{ category|e }}" ).hover(function() {
+      $( this ).mouseleave().addClass( "hover" );
+    }, function() {
+      $( ".sites" ).removeClass( "hover" );
+    });
+  </script>
+{% endfor %}
+
+<footer>
+  Hi, I'm <a href="mailto:heung+www@sublee.kr">Lee Heung-sub</a>.
+  If you want to know me, follow my links. And the source of this page is
+  <a href="http://pastie.org/private/fbidrhnmbiua9vmr2hgzg">here</a>.
+</footer>
+
+{% include "ga.html" %}
+</body>
+</html>
+

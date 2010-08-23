@@ -1,0 +1,6 @@
+HOST = "localhost"
+PORT = 42341
+SERVER_NAME = "localhost"
+DEBUG = True
+SQLALCHEMY_DATABASE_URI = "sqlite:///subleekr/db.sqlite"
+
