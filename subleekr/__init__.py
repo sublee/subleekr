@@ -20,10 +20,9 @@ def FlaskModule(*args, **kwargs):
 def check_auth(username, password):
     try:
         from subleekr.auth import USERS, encrypt
+        return username in USERS and encrypt(password) == USERS[username]
     except ImportError:
-        USERS = {}
-        encrypt = lambda x: x
-    return username in USERS and encrypt(password) == USERS[username]
+        return False
 
 
 def requires_auth(f):
