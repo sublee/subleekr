@@ -8,7 +8,7 @@ __all__ = "encrypt", "adduser", "deluser", \
           "DuplicatedUserError", "UnregisteredUserError"
 
 
-AUTH_FILENAME = os.path.join(os.path.dirname(__file__), "../.auth")
+AUTH_FILEPATH = os.path.join(os.path.dirname(__file__), "../.auth")
 
 
 def encrypt(word):
@@ -25,7 +25,7 @@ def check(name, password):
 def _load_users():
     """Loads users from auth file."""
     try:
-        auth_file = open(AUTH_FILENAME)
+        auth_file = open(AUTH_FILEPATH)
         users = pickle.load(auth_file)
         auth_file.close()
     except IOError:
@@ -35,7 +35,7 @@ def _load_users():
 
 def _save_users(users):
     """Saves users into auth file."""
-    auth_file = open(AUTH_FILENAME, "w")
+    auth_file = open(AUTH_FILEPATH, "w")
     pickle.dump(users, auth_file)
     auth_file.close()
 
