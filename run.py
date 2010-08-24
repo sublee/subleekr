@@ -19,6 +19,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 auto_register_modules(app)
 app.db = SQLAlchemy(app)
 
+
 if __name__ == "__main__":
     app.run(host=conf.HOST, port=conf.PORT)
 
