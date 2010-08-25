@@ -12,9 +12,9 @@ def index():
     return render_template("docs/index.html")
 
 
-@app.app_errorhandler(404)
-def notfound(error):
-    return render_template("docs/error.html", error=error)
+#@app.app_errorhandler(404)
+#def notfound(error):
+#    return render_template("docs/error.html", error=error)
 
 
 @app.route("/<path:path>")

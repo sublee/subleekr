@@ -17,8 +17,10 @@ def auto_register_modules(app):
 
 
 app = Flask(__name__)
-if os.path.isfile(CONFIG_FILEPATH):
+try:
     app.config.from_pyfile(CONFIG_FILEPATH)
+except IOError:
+    pass
 auto_register_modules(app)
 app.db = SQLAlchemy(app)
 

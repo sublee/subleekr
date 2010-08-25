@@ -5,7 +5,7 @@ from subleekr.www.lib import Site
 SITES = [
   ("internals", [
     Site("sublee.kr",
-         "http://www.sublee.kr/",
+         "http://sublee.kr/",
          "Just here.",
          icon=True),
     Site("lab.sublee.kr",

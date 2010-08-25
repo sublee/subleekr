@@ -20,7 +20,7 @@ def FlaskModule(*args, **kwargs):
 
 
 def requires_auth(f):
-    """Decorated function will need authenticate."""
+    """Decorated function will need authentication."""
     @wraps(f)
     def decorated(*args, **kwargs):
         auth = request.authorization

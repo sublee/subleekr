@@ -1,2 +1,8 @@
-# Compiled source
+# Compiled sources
 *.pyc
+
+# Temporary files
+*.swp
+
+# Generated files
+*.sqlite

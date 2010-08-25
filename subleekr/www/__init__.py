@@ -24,7 +24,7 @@ from subleekr import FlaskModule
 from subleekr.www.lib import Site
 
 
-app = FlaskModule(__name__, subdomain="www")
+app = FlaskModule(__name__)
 
 
 @app.route("/")
