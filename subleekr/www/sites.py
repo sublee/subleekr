@@ -44,7 +44,7 @@ SITES = [
   ("projects", [
     Site("DocTest.js",
          "http://lab.sublee.kr/doctest.js",
-         "Test interactive javascript examples.",
+         "An interactive JavaScript test framework.",
          icon="http://lab.sublee.kr/doctest.js/favicon.ico"),
     Site("VLAAH",
          "http://vlaah.com/",
@@ -62,7 +62,7 @@ SITES = [
          icon="http://lab.sublee.kr/favicons/sublee.kr-apps-me2pheungp.ico"),
     Site("PagedTable",
          "http://lab.sublee.kr/pagedtable",
-         "Make a pager for the HTML table with JavaScript."),
+         "A pager for the HTML table with jQuery."),
   ]),
   ("externals", [
     Site("GitHub",
@@ -83,7 +83,7 @@ SITES = [
          icon="http://static.vlaah.com/images/favicon.ico"),
     Site("me2DAY",
          "http://me2day.net/sub",
-         "My micro texts.",
+         "My micro blog.",
          icon=True)
   ])
 ]
