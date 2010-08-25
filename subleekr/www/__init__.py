@@ -17,7 +17,7 @@
               ##########
 
 sublee's homepage. <http://sublee.kr/>
-                  From August 24, 2010
+                  From August 25, 2010
 """
 from flask import render_template
 from subleekr import FlaskModule
