@@ -38,8 +38,6 @@ class initialize(distutils.cmd.Command):
         self.same_config = False
 
     def finalize_options(self):
-        if not self.server and not self.db:
-            self.same_config = True
         config = {}
         d = type(os.path)("config")
         d.__file__ = self.CONFIG_FILEPATH
@@ -48,6 +46,8 @@ class initialize(distutils.cmd.Command):
             for key in dir(d):
                 if key.isupper():
                     config[key] = getattr(d, key)
+            if not self.server and not self.db:
+                self.same_config = True
         except IOError:
             config = self.DEFAULT_CONFIG
         if not self.server:
@@ -71,6 +71,7 @@ class initialize(distutils.cmd.Command):
                     SQLALCHEMY_DATABASE_URI = {db!r}
                 """.format(server=self.server, db=self.db))
                 config.write(config_code)
+                config.close()
                 del config
         if self.createdb:
             from subleekr.app import app
@@ -142,5 +143,6 @@ setup(name="subleekr",
       packages=["subleekr"],
       package_dir={"subleekr": "subleekr"},
       cmdclass=__commands__,
+      install_requires=["Flask==dev", "Flask-SQLAlchemy"],
       url="http://sublee.kr/")
 
