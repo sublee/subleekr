@@ -8,7 +8,7 @@ __all__ = "encrypt", "adduser", "deluser", \
           "DuplicatedUserError", "UnregisteredUserError"
 
 
-AUTH_FILEPATH = os.path.join(os.path.dirname(__file__), "../.auth")
+AUTH_FILEPATH = os.path.join(os.path.dirname(__file__), "../htaccess")
 
 
 def encrypt(word):
