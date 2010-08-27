@@ -7,3 +7,4 @@
 # Generated files
 *.sqlite
 config.cfg
+.auth
