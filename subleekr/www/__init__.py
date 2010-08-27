@@ -21,7 +21,7 @@ sublee's homepage. <http://sublee.kr/>
 """
 from flask import render_template
 from subleekr import FlaskModule
-from subleekr.www.lib import Site
+from subleekr.www.models import Site
 
 
 app = FlaskModule(__name__)
