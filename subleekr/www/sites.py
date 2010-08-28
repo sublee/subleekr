@@ -1,5 +1,5 @@
 # vim: set ts=2 sts=2 sw=2:
-from subleekr.www.lib import Site
+from subleekr.www.models import Site
 
 
 SITES = [
@@ -28,6 +28,10 @@ SITES = [
          "http://ubiq.sublee.kr/",
          "The ubiquitous system for my personal room.",
          icon="http://ubiq.sublee.kr/static/favicon.ico"),
+    Site("limbo.sublee.kr",
+         "http://limbo.sublee.kr/",
+         "The virtual server maintained by me.",
+         icon=True),
 #    Site("history.sublee.kr",
 #         "http://history.sublee.kr/",
 #         "The history of my hompages.",

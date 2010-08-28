@@ -1,0 +1,10 @@
+{% macro entry(ent) %}
+  <img src="{{ url_for("static", filename=ent.guess_icon())|e }}" />
+  {{ ent.name|e }}
+{% endmacro %}
+
+<ul>
+{% for ent in entries %}
+  <li>{{ entry(ent) }}</li>
+{% endfor %}
+</ul>

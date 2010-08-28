@@ -24,8 +24,7 @@ class initialize(distutils.cmd.Command):
 
     CONFIG_FILEPATH = os.path.join(os.path.dirname(__file__), "config.cfg")
     DEFAULT_CONFIG = {"SERVER_NAME": "sublee.kr",
-                      "SQLALCHEMY_DATABASE_URI": "sqlite:///subleekr/"
-                                                 "db.sqlite"}
+                      "SQLALCHEMY_DATABASE_URI": "sqlite:///db.sqlite"}
 
     user_options = [("server=", "s", "the server name"),
                     ("db=", "d", "a connection string for the database"),
