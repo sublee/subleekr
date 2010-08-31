@@ -1,7 +1,9 @@
 import os.path
-from flaskext.autoindex import AutoIndex
+from flask import Module
+from flaskext.autoindex import AutoIndexModule
 
 
-ROOT = os.path.join(os.path.expanduser("~"), "lab")
-app = AutoIndex(__name__, browse_root=ROOT, subdomain="browse")
+browse_root = os.path.join(os.path.expanduser("~"), "lab")
+app = Module(__name__, subdomain="browse")
+AutoIndexModule(app, browse_root)
 
