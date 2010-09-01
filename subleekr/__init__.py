@@ -3,7 +3,7 @@ from flask import *
 from subleekr.auth import check
 
 
-__all__ = "app", "www", "docs", "ubiq", "browse", "limbo",
+__all__ = "app", "www", "docs", "ubiq", "limbo", "labs"
 __modules__ = __all__[1:]
 
 
@@ -12,6 +12,7 @@ def FlaskModule(*args, **kwargs):
     an instance of this will serve :file:`"/static/favicon.ico"` file when
     somebody requests `/favicon.ico`.
     """
+    kwargs.setdefault("static_path", "static")
     app = Module(*args, **kwargs)
     @app.route("/favicon.ico")
     def favicon():
