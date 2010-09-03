@@ -5,7 +5,11 @@
 <title>sublee</title>
 {% include "openid.html" %}
 <meta name="viewport"
-  content="width=device-width,initial-scale=1,user-scalable=no" />
+  content="
+    width=device-width,
+    initial-scale=1,
+    maximum-scale=1,
+    user-scalable=no" />
 <link href="{{ url_for("static", filename="style.less")|e }}"
   rel="stylesheet/less" />
 <script src="http://lab.sublee.kr/forks/less.js/dist/less-1.0.34.js"></script>
@@ -61,6 +65,7 @@
   <a href="http://pastie.org/private/fbidrhnmbiua9vmr2hgzg">here</a>.
 </footer>
 
+<script src="{{ url_for("static", filename="ready.js")|e }}"></script>
 {% include "forkme.html" %}
 {% include "ga.html" %}
 </body>
