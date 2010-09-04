@@ -1,10 +1,16 @@
 {% extends "__autoindex__/browse.html" %}
 
+{% block meta %}
+  {{ super() }}
+  <link rel="stylesheet"
+    href="{{ url_for("static", filename="style.css")|e }}" />
+{% endblock %}
+
 {% block header %}
-<div style="width: 500px; margin: 30px auto;">
-<p>Here is <a href="http://sublee.kr/">sublee</a>'s laboratory.</p>
+  <div style="width: 500px; margin: 30px auto;">
+    <h2><img src="{{ url_for("favicon")|e }}" alt="sublee's laboratory" /></h2>
 {% endblock %}
 
 {% block footer %}
-</div>
+  </div>
 {% endblock %}
