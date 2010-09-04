@@ -28,5 +28,6 @@ def get_favicon(ent):
 
 idx.add_icon_rule("folder_brick.png", foldername="forks")
 idx.add_icon_rule("/favicon.ico", cls=RootFolder)
+idx.add_icon_rule("http://sublee.kr/favicon.ico", foldername="subleekr")
 idx.add_icon_rule(get_favicon)
 
