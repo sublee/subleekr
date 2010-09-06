@@ -3,7 +3,8 @@ from flask import *
 from subleekr.auth import check
 
 
-__all__ = "app", "www", "docs", "ubiq", "limbo", "labs"
+__all__ = "app", \
+          "www", "docs", "ubiq", "limbo", "labs"
 __modules__ = __all__[1:]
 
 
