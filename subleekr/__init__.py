@@ -28,7 +28,7 @@ def requires_auth(f):
         auth = request.authorization
         if not auth or not check(auth.username, auth.password):
             headers = {"WWW-Authenticate": 'Basic realm="Login Required"'}
-            return Response(status=401, headers=headers)
+            return Response("", status=401, headers=headers)
         return f(*args, **kwargs)
     return decorated
 
