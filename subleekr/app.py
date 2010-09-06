@@ -16,11 +16,13 @@ def auto_register_modules(app):
         app.register_module(module.app)
 
 
-app = Flask(__name__)
-try:
-    app.config.from_pyfile(CONFIG_FILEPATH)
-except IOError:
-    pass
-auto_register_modules(app)
-app.db = SQLAlchemy(app)
+def create_app(__name__=__name__):
+    app = Flask(__name__)
+    try:
+        app.config.from_pyfile(CONFIG_FILEPATH)
+    except IOError:
+        pass
+    auto_register_modules(app)
+    app.db = SQLAlchemy(app)
+    return app
 
