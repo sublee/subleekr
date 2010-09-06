@@ -21,7 +21,7 @@ class Site(object):
     def icon(self):
         if self.use_icon:
             try:
-                return self.icon_url
+                return urlparse.urljoin(self.url, self.icon_url)
             except AttributeError:
                 return urlparse.urljoin(self.url, self.DEFAULT_ICON)
 
