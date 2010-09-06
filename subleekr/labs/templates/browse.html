@@ -3,12 +3,12 @@
 {% block meta %}
   {{ super() }}
   <link rel="stylesheet"
-    href="{{ url_for("static", filename="style.css")|e }}" />
+    href="{{ url_for("static", filename="style.css") }}" />
 {% endblock %}
 
 {% block header %}
   <div style="width: 500px; margin: 30px auto;">
-    <h2><img src="{{ url_for("favicon")|e }}" alt="sublee's laboratory" /></h2>
+    <h2><img src="{{ url_for("favicon") }}" alt="sublee's laboratory" /></h2>
 {% endblock %}
 
 {% block footer %}

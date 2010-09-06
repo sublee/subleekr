@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="{{ url_for("favicon") }}" />
 </head>
 <body style="
-  background: url('{{ url_for("static", filename="paper.gif")|e }}');
+  background: url('{{ url_for("static", filename="paper.gif") }}');
   background-position: top center;
   margin: 0; padding: 0;">
   {% block body %}
@@ -20,7 +20,7 @@
       margin-left: -220px;
       width: 240px; height: 260px;">
       <img alt="sublee's Documents"
-        src="{{ url_for("static", filename="docs.png")|e }}" />
+        src="{{ url_for("static", filename="docs.png") }}" />
     </h1>
   {% endblock %}
 </body>
