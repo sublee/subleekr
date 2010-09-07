@@ -35,7 +35,7 @@
       {% for site in sites %}
         <li>
           {%- if site.icon -%}
-            <img src="{{ site.icon }}"
+            <img src="{{ site.icon }}" width="16" height="16"
               onerror="this.src = '{{ nofavicon }}';" />
           {%- else -%}
             <img src="{{ nofavicon }}" />
