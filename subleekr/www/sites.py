@@ -46,8 +46,8 @@ SITES = [
 #         icon="http://lab.sublee.kr/favicons/game.sublee.kr.ico"),
   ]),
   ("projects", [
-    Site("DocTest.js",
-         "http://lab.sublee.kr/doctest.js",
+    Site("jDoctest",
+         "http://lunant.github.com/jdoctest",
          "An interactive JavaScript test framework.",
          icon="http://lab.sublee.kr/doctest.js/favicon.ico"),
     Site("Flask-AutoIndex",
