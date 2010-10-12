@@ -49,7 +49,7 @@ SITES = [
     Site("jDoctest",
          "http://lunant.github.com/jdoctest",
          "An interactive JavaScript test framework.",
-         icon="http://docs.sublee.kr/jdoctest/_static/favicon.ico"),
+         icon="http://lunant.github.com/jdoctest/_static/favicon.ico"),
     Site("Hangulize",
          "http://github.com/sublee/hangulize",
          "The Python module that transcribes a loanword to " \
