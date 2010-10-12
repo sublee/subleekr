@@ -49,7 +49,12 @@ SITES = [
     Site("jDoctest",
          "http://lunant.github.com/jdoctest",
          "An interactive JavaScript test framework.",
-         icon="http://lab.sublee.kr/doctest.js/favicon.ico"),
+         icon="http://docs.sublee.kr/jdoctest/_static/favicon.ico"),
+    Site("Hangulize",
+         "http://github.com/sublee/hangulize",
+         "The Python module that transcribes a loanword to " \
+         "Hangul(the Korean alphabet).",
+         icon="http://sublee.kr/static/hangulize.ico"),
     Site("Flask-AutoIndex",
          "http://packages.python.org/Flask-AutoIndex",
          "A mod_autoindex for Flask."),
