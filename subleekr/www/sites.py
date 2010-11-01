@@ -47,9 +47,9 @@ SITES = [
   ]),
   ("projects", [
     Site("jDoctest",
-         "http://lunant.github.com/jdoctest",
+         "http://jdoctest.lunant.org/",
          "An interactive JavaScript test framework",
-         icon="http://lunant.github.com/jdoctest/_static/favicon.ico"),
+         icon="http://jdoctest.lunant.org/_static/favicon.ico"),
     Site("Hangulize",
          "http://www.hangulize.org/",
          "Korean Alphabet Transcription",
