@@ -35,7 +35,7 @@ SITES = [
     Site("limbo.sublee.kr",
          "http://limbo.sublee.kr/",
          "The virtual server maintained by me",
-         icon=True),
+         icon="http://limbo.sublee.kr/static/limbo.gif"),
 #    Site("history.sublee.kr",
 #         "http://history.sublee.kr/",
 #         "The history of my hompages",
