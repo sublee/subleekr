@@ -18,7 +18,7 @@ SITES = [
          icon=True),
     Site("ico.sublee.kr",
          "http://ico.sublee.kr/",
-         "My laboratory",
+         "The favicon gallery",
          icon=True),
 #    Site("docs.sublee.kr",
 #         "http://docs.sublee.kr/",
